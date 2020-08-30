@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title> 
+        <style type="text/css">
+        .fdj{
+            width: 800px;
+            height: 300px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .left{
+            width: 400px;
+            height: 300px;
+            display: flex;
+            background-image: url(1.jpg);
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .right{
+            width: 400px;
+            height: 300px;
+            background-image: url(1.jpg);
+            background-size: 200% 200%;
+            display: none;
+            background-position:0 0;
+        }
+        .zhezhao{
+            /* display: none; */
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+            opacity: 0.5;
+            position: absolute;
+
+        }
+        </style>
+    </head>
+    <body>
+        <div class="fdj">
+            <div class="left">
+                <div class="zhezhao"></div>
+            </div>
+            <div class="right"></div>
+        </div>
+        <script type="text/javascript">
+        var left=document.querySelector(".left")
+        var zhezhao=document.querySelector(".zhezhao")
+        var fdj=document.querySelector(".fdj")
+        var right=document.querySelector(".right")
+        left.onmouseenter=function(){
+            zhezhao.style.display="block"
+            right.style.display="block"
+        }
+        left.onmouseleave=function(){
+            zhezhao.style.display="none"
+        }
+        left.onmousemove=function(event){
+            var x=event.pageX-100-fdj.offsetLeft;
+            var y=event.pageY-75-fdj.offsetTop;
+            if(x<0){
+                x=0
+            }
+            if(x>200){
+                x=200
+            }
+            if(y<0){
+                y=0
+            }
+            if(y>100){
+                y=100
+            }
+            zhezhao.style.left=x+"px"
+            zhezhao.style.top=y+"px"
+
+            right.style.backgroundPositonX="-200px"
+            right.style.backgroundPositonY="-200px"
+        
+        }
+        </script>
+    </body>
+</html>
+
+

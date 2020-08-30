@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title> 
+        <style type="text/css">
+        body{
+            perspective: 1000px;
+        }
+            .d1{
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+                position: relative;
+                transform-style:preserve-3d;
+                transform: rotate3d(0,0,0,0deg);
+                transition: all 2s;
+                top: 100px;
+            }
+            .d1:hover{
+                transform: rotate3d(1,1,1,720deg);
+            }
+            .d1 div{
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .page1{
+                background-image:url(1.jpg) ;
+                background-size:100% auto;
+                opacity: 0.7;
+                transform: translateZ(100px);
+            }
+            .page2{
+                background-image:url(2.jpg) ;
+                background-size:100% auto;
+                opacity: 0.7;
+                transform: translateZ(-100px);
+            }
+            .page3{
+                background-image:url(3.jpg) ;
+                background-size:100% auto;
+                opacity: 0.7;
+                transform: rotatey(90deg) translateZ(100px);
+            }
+            .page4{
+                background-image:url(4.jpg) ;
+                background-size:100% auto;
+                opacity: 0.7;
+                transform: rotatey(-90deg) translateZ(100px);
+            }
+            .page5{
+                background-image:url(5.jpg) ;
+                background-size:100% auto;
+                opacity: 0.7;
+                transform: rotateX(90deg) translateZ(100px);
+            }
+            .page6{
+                background-image:url(6.jpg) ;
+                background-size:100% auto;
+                opacity: 0.7;
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+            .choose{
+                width: 900px;
+                height: 400px;
+                text-align: center;
+                margin: 0 auto;
+                position: relative;
+                top:250px;
+            }
+            .btn{
+                width:100px;
+                height: 40px;
+                font-size: 20px;
+                border: 1px solid blue;
+                border-radius: 10px;
+                display: inline-block;
+                line-height: 40px;
+                
+                transition: all 0.25s;
+            }
+            .btn:hover{
+                box-shadow: 0 0 30px blue;
+            }
+            #front:checked ~.d1{
+                transform: rotate3d(0,0,0,0deg);
+            }
+            #back:checked ~.d1{
+                transform: rotate3d(0,1,0,180deg);
+            }
+            #left:checked ~.d1{
+                transform: rotate3d(0,1,0,90deg);
+            }
+            #right:checked ~.d1{
+                transform: rotate3d(0,1,0,-90deg);
+            }
+            #top:checked ~.d1{
+                transform: rotate3d(1,0,0,-90deg);
+            }
+            #bottom:checked ~.d1{
+                transform: rotate3d(1,0,0,90deg);
+            }
+            #big:checked ~.d1{
+                transform: scale(2) rotate3d(1,1,0,90deg);
+            }
+            #small:checked ~.d1{
+                transform: scale(0.5) rotate3d(1,1,0,90deg);
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <label for=""></label>
+            <input type="radio" id="front" hidden="hidden" name="d1">
+            <input type="radio" id="back" hidden="hidden" name="d1">
+            <input type="radio" id="left" hidden="hidden" name="d1">
+            <input type="radio" id="right" hidden="hidden" name="d1">
+            <input type="radio" id="top" hidden="hidden" name="d1">
+            <input type="radio" id="bottom" hidden="hidden" name="d1">
+            <input type="radio" id="big" hidden="hidden" name="d1">
+            <input type="radio" id="small" hidden="hidden" name="d1">
+        <div class="d1">
+            <div class="page1"></div>
+            <div class="page2"></div>
+            <div class="page3"></div>
+            <div class="page4"></div>
+            <div class="page5"></div>
+            <div class="page6"></div>
+        </div>
+        <div class="choose">
+            <label class="btn"  for="front">front</label>
+            <label class="btn" for="back">back</label>
+            <label class="btn" for="left">left</label>
+            <label class="btn" for="right">right</label>
+            <label class="btn" for="top">top</label>
+            <label class="btn" for="bottom">bottom</label>
+            <label class="btn" for="big">big</label>
+            <label class="btn" for="small">small</label>
+        </div>
+
+    </body>
+</html>
+
+<!-- 
+    type:定义输入标签的类型
+    name：提交数据的名称
+    value：输入框的值
+    placeholder：预置文字
+-->
+
