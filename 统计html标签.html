@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <div>
+            <div class="box">
+                <p>
+                    <span>  </span>
+                    <span>  </span>
+                </p>
+            </div>
+        </div>
+    </body>
+    <style>
+        .box{
+
+        }
+    </style>
+   <script>
+       var map={};
+       function printTree(node){
+        if(map[node.nodeName]==undefined){
+            map[node.nodeName]=1;
+        }else{
+            map[node.nodeName]+=1;
+        }
+        if(node.children){
+            var i=0;
+            while(i<node.children.length){
+                printTree(node.children[i]);
+                i+=1;
+            }
+          
+        }
+       }
+       printTree(document);
+       console.log(map);
+
+   </script>
+</html>

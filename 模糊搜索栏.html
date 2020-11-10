@@ -1,0 +1,22 @@
+<html>
+    <div class="bos">
+        <div class="fin"><input type="text" placeholder="input..." value="" class="a"></div>
+        <button class="sure">搜索</button>
+    </div>
+  
+</html>
+
+<style>
+    .bos{
+        display: flex;
+        
+    }
+</style>
+
+<script>
+var value=document.querySelector(".a");
+var button=document.getElementsByClassName("sure");
+button[0].addEventListener("click",function(){
+    console.log(value);
+})
+</script>

@@ -1,0 +1,42 @@
+<html>
+    <ul id="list"> 
+        <li>first</li>
+        <li>second</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</html>
+
+<script>
+    // var res=document.getElementsByTagName("ul");
+    var res=document.querySelector("#list");
+    var s=res.children;
+
+  
+    // for(var i=0;i<s.length;i++){
+    //     (function(j){
+    //         s[j].addEventListener("click",function(e){
+    //         console.log(j+1);
+    //     })
+    //     })(i)
+    //    ;
+    // }           
+
+   var slist= Array.prototype.slice.call(s); //将具有length属性的对象转换为数组
+
+   console.log(slist);
+   res.addEventListener("click",function(event){
+        var target = event.target;
+       console.log(slist.indexOf(target));
+   })
+
+ 
+   
+</script>
+
+
+
+
+ 

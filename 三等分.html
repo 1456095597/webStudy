@@ -1,0 +1,105 @@
+<html>
+    <div class="main">
+    <div class="left"></div>
+    <div class="middle"></div>
+    <div class="right"></div>
+    
+</div>
+</html>
+
+<style>
+    /* .left{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 180px;
+        background-color: aqua;
+    }
+    .right{
+        position: absolute;
+        height: 100%;
+        right: 0;
+        width: 180px;
+        background-color: rgb(78, 45, 121);
+    }
+    .middle{
+        height: 100%;
+        position: absolute;
+       left: 180px;
+       right: 180px;
+        background-color: rgb(182, 115, 16);
+
+    }
+    body{
+        margin: 0;
+    }
+    //绝对定位 */
+
+    /* 浮动定位
+    .left{
+        float: left;
+        width: 100px;
+        background-color: aqua;
+        height: 100%;
+    }
+    .right{
+        float: right;
+        width: 100px;
+        background-color: aquamarine;     //浮动布局dix顺序重要，一个dix独占一行，浮动元素写在前面
+        height: 100%;
+    }
+    .middle{
+        height: 100%;
+        margin:0 100px 0 100px;
+        background-color: blue;
+    }
+    body{
+        margin: 0;
+    } */
+
+
+    /* table布局
+    .main{
+        width: 100%;
+        height: 100%;
+        display: table;
+    }
+    .left{
+        display: table-cell;
+        width: 100px;
+        height: 100%;
+        background-color: blue;
+    }
+    .right{
+        display: table-cell;
+        width: 100px;
+        height: 100%;
+        background-color: blueviolet;
+    }
+    .middle{
+        display: table-cell;
+        width: calc(100%-200px);
+        height: 100%;
+        background-color: brown;
+    } */
+
+    .main{
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+    .left{
+        width: 100px;
+        background-color: brown;
+    }
+    .middle{
+        background-color: burlywood;
+        width: calc(100% - 200px);   
+        /* calc注意运算符前后保留空格 */
+    } 
+    .right{
+        width: 100px;
+        background-color: cadetblue;
+    }
+    /* 弹性布局 */
+</style>

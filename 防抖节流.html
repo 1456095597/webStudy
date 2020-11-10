@@ -1,0 +1,35 @@
+<html>
+    <button class="b1">click</button>
+    <button class="b2">click</button>
+
+</html>
+
+<script>
+    var b1=document.getElementsByClassName("b1");
+    var b2=document.getElementsByClassName("b2");
+    b1[0].addEventListener("click",s1());
+    b2[0].addEventListener("click",s2());
+    function s1(){
+        let timer=null;
+        return function(){
+            clearTimeout(timer);
+            timer=setTimeout(() => {
+            console.log(123);
+        }, 1000);
+        }
+    };
+    
+    function s2(){
+        let pre=0;
+        return function(){
+            let now =Date.now();
+            if(now-pre>2000){
+                console.log(2426);
+                pre=now;
+                console.log(pre);
+            }
+        }
+
+
+    }
+</script>
